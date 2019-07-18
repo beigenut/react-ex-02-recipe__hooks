@@ -1,11 +1,20 @@
 import React from 'react'
  
-const Recipe = ({title, image, calories}) => {
+// const Recipe = ({title, image, calories}) => {
+const Recipe = (props) => {
+  const {title, image, calories, ingredients } = props
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{calories}</p>
+    <div className="recipe-box">
+      <span>{title}</span>
+      <ul>
+        {ingredients.map(i => (
+          <li className="recipe-list">{i.text}</li>
+        ))}
+      </ul>
+      <p className="recipe-cal">{calories.toFixed(2)}</p>
+      <div className="img-box">
       <img src={image}/>
+      </div>
     </div>
   )
 }
