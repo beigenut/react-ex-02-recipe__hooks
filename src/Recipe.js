@@ -1,22 +1,33 @@
-import React from 'react'
- 
-// const Recipe = ({title, image, calories}) => {
-const Recipe = (props) => {
-  const {title, image, calories, ingredients } = props
-  return (
-    <div className="recipe-box">
-      <span>{title}</span>
-      <ul>
-        {ingredients.map(i => (
-          <li className="recipe-list">{i.text}</li>
-        ))}
-      </ul>
-      <p className="recipe-cal">{calories.toFixed(2)}</p>
-      <div className="img-box">
-      <img src={image}/>
-      </div>
+import React, {useContext} from 'react'
+import RecipeList from './RecipeList'
+import {RecipeContext} from './RecipeContext'
+
+const Recipe = () => {
+  const [recipes, getRecipes, search, setSearch] = useContext(RecipeContext)
+
+  const handleChangeSearch = (e) => {
+    setSearch(e.target.value)
+  }
+
+  const handleSubmitSearch = e => {
+    e.preventDefault();
+    getRecipes();
+    setSearch('');
+  }
+  return(
+    <React.Fragment>
+    <form className="search-form" onSubmit={handleSubmitSearch}>
+        <input type="text" className="search-bar" value={search} onChange={handleChangeSearch}/>
+        <button type="submit" className="search-btn">Search</button>
+      </form>
+      <h1>FOOD RECIPES! FINDING BEST RECIPE!</h1>
+      <div className="App-box">      
+      {recipes.map(recipe => (
+        <RecipeList key={recipe.recipe.label} title={recipe.recipe.label} image={recipe.recipe.image} calories={recipe.recipe.calories} ingredients={recipe.recipe.ingredients}/>
+      ))}
     </div>
-  )
+    </React.Fragment>
+  );
 }
 
 export default Recipe
