@@ -7,6 +7,9 @@ const RecipeList = (props) => {
   
   return (
     <div className="recipe-box">
+      <div className="img-box">
+        <img src={image}/>
+      </div>
       <span>{title}</span>
       <ul>
         {ingredients.map(i => (
@@ -14,9 +17,6 @@ const RecipeList = (props) => {
         ))}
       </ul>
       <p className="recipe-cal">{calories.toFixed(2)}</p>
-      <div className="img-box">
-      <img src={image}/>
-      </div>
     </div>
   )
 }
