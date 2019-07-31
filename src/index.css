@@ -46,7 +46,6 @@ body {
 
 .App {
   text-align: center;
-  width: 100vw;
 }
 
 h1 {
@@ -101,7 +100,7 @@ h1 {
 .recipe-box .img-box {
   position: relative;
   width: 100%;
-  height: 250px;
+  min-height: 250px;
   overflow: hidden;
   border: 5px solid #fff;
 }
@@ -140,4 +139,32 @@ h1 {
   font-weight: 600;
   text-transform: uppercase;
   margin: 15px 0 10px 0;
+}
+
+@media (max-width: 1399px) {
+  .App-box {
+    width: calc(100% - 40px);
+    columns: 3;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1079px) {
+  .App-box {
+    columns: 2;
+  }
+  .recipe-box .img-box {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 699px) {
+  .App-box {
+    columns: 1;
+    width: calc(100% - 60px);
+    padding: 0 30px;
+  }
+  .recipe-box .img-box {
+    min-height: 250px;
+  }
 }
