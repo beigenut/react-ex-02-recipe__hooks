@@ -1,7 +1,7 @@
 <p align="center">
   <h3 align="center">https://github.com/beigenut/react-ex-02-recipe</h3>
   <p align="center">
-  Simple CookBook web application using `React Hooks`. 
+  Simple CookBook web application using `React Hook`. 
   <a href="https://react-ex-02-recipe.netlify.com" target="_blank"> View website</a>
 </p>
 </p>
@@ -21,9 +21,9 @@ _ _ _
 
 ## About The Project
 
-<img src="https://drive.google.com/uc?export=view&id=17TC7G-730wLkTwbZuYJ1vu3uESVDkoEs" width="700px">
+<img src="https://drive.google.com/uc?export=view&id=1XPmEYK9eMVHb1-2eBhpUcCrChM3qd3DO" width="800px">
 
-Load variaty Recipes from edamam.com SearchAPI. This plain application was developed to study `React Hooks.`
+Load variaty Recipes from edamam.com SearchAPI. This plain application was developed to study `React Hook.`
 
 
 ### Built With
@@ -43,6 +43,51 @@ Load variaty Recipes from edamam.com SearchAPI. This plain application was devel
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+`RecipeContext.js`
+
+Exported two different Components.
+
+```js
+export const RecipeContext = createContext(); // more like Consumer..
+export const RecipeProvider = (props) => { return() } // more like Provider with value property
+```
+
+In RecipeProvider component, used useState() method to control the states. 
+
+```js
+const [recipes, setRecipes] = useState([])
+```
+
+`App.js`
+
+To use props from Provider, wrap `Recipe` component with `RecipeProvider` components from RecipeContext.js.
+
+```js
+<RecipeProvider>
+  <Recipe />
+</RecipeProvider>
+```
+
+`Recipe.js`
+
+```js
+import React, {useContext} from 'react'
+import {RecipeContext} from './RecipeContext'
+//... const recipe = () => {
+const [recipes, getRecipes, search, setSearch] = useContext(RecipeContext)
+//...}
+```
+
+Now available to use `states` from RecipeContext.js.
+
+<br></br>
+
+In fact, while studying React Hook, I got more confused by the name of the method. 
+
+`useState()` is similar to setState() before.
+
+For 'useContext', it would have more obvious if it would named as 'useState'.
 
 
 
