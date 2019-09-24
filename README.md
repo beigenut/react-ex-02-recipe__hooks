@@ -1,7 +1,7 @@
 <p align="center">
   <h3 align="center">https://github.com/beigenut/react-ex-02-recipe</h3>
   <p align="center">
-  Simple CookBook web application using `React Hook`. 
+  Simple CookBook web application using `React Hook`. <br>
   <a href="https://react-ex-02-recipe.netlify.com" target="_blank"> View website</a>
 </p>
 </p>
@@ -107,7 +107,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/beigenut/react-ex-02-recipe](https://github.com/beigenut/react-ex-02-recipe)
+Project Link: [https://github.com/beigenut/react-ex-02-recipe__hooks](https://github.com/beigenut/react-ex-02-recipe__hooks)
 
 
 
